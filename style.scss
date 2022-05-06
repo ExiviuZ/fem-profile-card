@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+$darkCyan: hsl(185, 75%, 39%);
+$vdDesatBlue: hsl(229, 23%, 23%);
+$darkGrayishBlue: hsl(227, 10%, 46%);
+$neutDarkGray: hsl(0, 0%, 59%);
+$neutDarkGrayBorder: hsl(0, 0%, 89%);
+$white: white;
+$ff: "Kumbh Sans", sans-serif;
+
+*,
+*::after,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  font-family: $ff;
+  margin: 0;
+  background-color: $darkCyan;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+
+  .bg-pattern-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+  .bg-pattern-bottom {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translate(50%, 50%);
+    z-index: -1;
+  }
+
+  .card {
+    width: 25%;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    .card-content {
+      text-align: center;
+      position: relative;
+      .bg-pattern-card {
+        width: 100%;
+        display: block;
+        height: 140px;
+      }
+      .profile-picture-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0.3rem;
+        background-color: $white;
+        border-radius: 50%;
+        .profile-picture {
+          border-radius: 50%;
+          width: 100%;
+          display: block;
+        }
+      }
+      .profile {
+        padding: 2rem;
+        padding-top: 3rem;
+        height: 140px;
+        p {
+          .name {
+            font-size: 18px;
+            font-weight: 700;
+            color: $vdDesatBlue;
+          }
+          .age,
+          .place {
+            color: $darkGrayishBlue;
+          }
+          .place {
+            display: block;
+          }
+        }
+      }
+    }
+    .card-footer {
+      border-top: 1px solid $neutDarkGrayBorder;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      span {
+        font-size: 18px;
+        font-weight: 700;
+        color: $vdDesatBlue;
+        display: block;
+      }
+      small {
+        color: $darkGrayishBlue;
+        letter-spacing: 1px;
+      }
+    }
+  }
+  .attribution {
+    bottom: 10%;
+    font-size: 12px;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    background-color: $vdDesatBlue;
+    color: white;
+    position: absolute;
+  }
+  .attribution a {
+    color: $darkCyan;
+  }
+}
+@media screen and (max-width: 1000px) {
+  body {
+    .bg-pattern-top {
+      width: 100%;
+    }
+    .bg-pattern-bottom {
+      width: 100%;
+    }
+    .card {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    .card {
+      width: 90%;
+    }
+  }
+}
